@@ -1,22 +1,11 @@
 #!/usr/local/bin/python3
 import heapq
-import sys
-sys.path.append('/home/staff/kurban/python')
 
-import csc220
-
-csc220.showForm("This is the comment on the form area.")  
-
-textarea = csc220.getInput('textarea')
-textbox = csc220.getInput('textbox')
-
-print ("<h2>This is at the bottom and can be used for any html output </h2><br>")
-
-#Code below is from lecture slides
+para = input("Prargraph: ")
 
 freq = {}  #empty map (dictionary)
 
-for ch in textarea:
+for ch in para:
   if ch not in freq:
     freq[ch] = 0
   freq[ch] += 1  # KeyError: '5'
@@ -27,7 +16,6 @@ for [char, count] in freq.items():  #go through (key: value) pairs
   print ("{}: {}".format(char, count))
 
 print("-----")
-#My code
 
 class Node:
     def __init__(self, char, freq):
@@ -79,9 +67,3 @@ compressed = huffman(freq)
 final = huffcodes(compressed)
 print("Huffman Codes:", final)
 
-
-
-# I honor Parkland's core values by affirming that I have 
-# followed all academic integrity guidelines for this work.
-
-# Siddharth Singh
